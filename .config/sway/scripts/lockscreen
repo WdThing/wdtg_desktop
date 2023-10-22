@@ -6,6 +6,6 @@ swayidle \
     resume 'swaymsg "output * power on"' &
 # Locks the screen immediately
 sleep 0.5
-swaylock --clock --indicator --effect-blur 7x5 --image ~/Pictures/wallpaper.jpg
+swaylock --clock --indicator --effect-blur 7x5 --image ~/.config/sway/images/wallpaper.jpg
 # Kills last background task so idle timer doesn't keep running
 kill %%

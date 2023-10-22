@@ -19,6 +19,7 @@ window#waybar {
 #disk,
 #pulseaudio,
 #custom-weather,
+#custom-powermenu,
 #cpu {
   padding-left: 1rem;
   padding-right: 1rem;

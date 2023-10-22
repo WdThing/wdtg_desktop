@@ -37,6 +37,15 @@ output * bg ~/.config/sway/images/wallpaper.jpg fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
+# My hardware configuration
+output DP-2 pos 0 0 res 1920x1080@142.010Hz adaptive_sync on
+output HDMI-A-1 pos 1920 0 res 1600x900 transform 270
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output HDMI-A-1
+
 ### Visual
 gaps inner 8
 default_border pixel 2
@@ -72,6 +81,11 @@ input type:keyboard {
   xkb_layout us(intl)
 }
 
+input 1133:16500:Logitech_G305 {
+  accel_profile "flat"
+  pointer_accel -0.1
+}
+
 ### Key bindings
 #
 # Basics:
@@ -87,6 +101,11 @@ input type:keyboard {
 
     # Lockscreen
     bindsym $mod+l exec $lockscreen
+
+    # Volume control
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -235,5 +254,7 @@ bar {
 # Programs
 #
 exec $notifications
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/bin/corectrl
 
 include /etc/sway/config.d/*
