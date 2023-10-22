@@ -6,4 +6,4 @@ export WLR_NO_HARDWARE_CURSORS=1
 export XDG_CURRENT_DESKTOP=sway # xdg-desktop-portal
 export XDG_SESSION_DESKTOP=sway # systemd
 export XDG_SESSION_TYPE=wayland # xdg/systemd
-" > /etc/environment
+" >> /etc/environment
