@@ -41,10 +41,10 @@ output * bg ~/.config/sway/images/wallpaper.jpg fill
 output DP-2 pos 0 0 res 1920x1080@142.010Hz adaptive_sync on
 output HDMI-A-1 pos 1920 0 res 1600x900 transform 270
 
+workspace 4 output HDMI-A-1
 workspace 1 output DP-2
 workspace 2 output DP-2
 workspace 3 output DP-2
-workspace 4 output HDMI-A-1
 
 ### Visual
 gaps inner 8
@@ -239,6 +239,8 @@ bindsym $mod+r mode "resize"
 assign [app_id="firefox"] workspace 1
 assign [class="WebCord"] workspace 3
 assign [class="steam"] workspace 2
+assign [app_id="corectrl"] workspace 5
+assign [class="dota2"] workspace 2
 
 # Window rules
 
@@ -255,6 +257,9 @@ bar {
 #
 exec $notifications
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+workspace 5
 exec /usr/bin/corectrl
+
+exec_always $HOME/.config/sway/scripts/set_primary_monitor
 
 include /etc/sway/config.d/*
