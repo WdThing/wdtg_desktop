@@ -221,6 +221,8 @@ assign [app_id="firefox"] workspace 1
 assign [class="WebCord"] workspace 3
 assign [class="steam"] workspace 2
 
+# Window rules
+
 #
 # Status Bar:
 #

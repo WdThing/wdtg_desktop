@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["wlr/taskbar", "pulseaudio", "memory", "cpu"],
+    "modules-right": ["wlr/taskbar", "pulseaudio", "memory", "cpu", "custom/powermenu"],
     "sway/window": {
         "max-length": 50
     },
@@ -63,5 +63,11 @@
 		"2": [],
 		"3": []
 	}
+    },
+
+    "custom/powermenu": {
+	"format": "",
+	"on-click": "$HOME/.config/sway/scripts/wlogout",
+	"tooltip": false
     }
 }
