@@ -68,6 +68,10 @@ default_border pixel 2
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input type:keyboard {
+  xkb_layout us(intl)
+}
+
 ### Key bindings
 #
 # Basics:
@@ -211,6 +215,11 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# Binding programs to workspace
+assign [app_id="firefox"] workspace 1
+assign [class="WebCord"] workspace 3
+assign [class="steam"] workspace 2
 
 #
 # Status Bar:
