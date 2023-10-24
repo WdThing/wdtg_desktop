@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Times the screen off and puts it to background
-swayidle \
-    timeout  300 'swaymsg "output * power off"' \
-    resume 'swaymsg "output * power on"' &
+#swayidle \
+#    timeout  300 'swaymsg "output * power off"' \
+#    resume 'swaymsg "output * power on"' &
 # Locks the screen immediately
 sleep 0.5
 swaylock --clock --indicator --effect-blur 7x5 --image ~/.config/sway/images/wallpaper.jpg
