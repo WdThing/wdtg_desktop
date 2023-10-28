@@ -1,10 +1,10 @@
 {
     "layer": "top",
-    "margin-left": 25,
-    "margin-right": 25,
+    "margin-left": 10,
+    "margin-right": 10,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["wlr/taskbar", "pulseaudio", "memory", "cpu", "custom/powermenu"],
+    "modules-right": ["wlr/taskbar", "pulseaudio", "memory", "cpu", "sway/language", "custom/powermenu"],
     "sway/window": {
         "max-length": 50
     },
@@ -28,6 +28,9 @@
         "interval": 1,
         "format": "{}% ",
         "max-length": 10
+    },
+    "sway/language": {
+	"format": "{shortDescription}",
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",

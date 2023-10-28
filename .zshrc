@@ -104,7 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias editor="nvim "
+alias zshconfig="editor ~/.zshrc"
+alias disablepage="sudo ~/Projects/Utilities/disable_page.sh"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export MOZ_ENABLE_WAYLAND=1 # for firefox to run on wayland
@@ -113,6 +115,10 @@ export WLR_NO_HARDWARE_CURSORS=1
 export XDG_CURRENT_DESKTOP=sway # xdg-desktop-portal
 export XDG_SESSION_DESKTOP=sway # systemd
 export XDG_SESSION_TYPE=wayland # xdg/systemd
+
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec sway
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
