@@ -23,6 +23,7 @@ set $menu ~/.config/sway/scripts/menu
 set $screenshot ~/.config/sway/scripts/screenshot
 set $notifications ~/.config/sway/scripts/notifications
 set $lockscreen ~/.config/sway/scripts/lockscreen
+set $calculator ~/.config/sway/scripts/python_calculator
 
 ### Output configuration
 #
@@ -106,6 +107,9 @@ seat seat0 xcursor_theme Qogir 36
 
     # Lockscreen
     bindsym $mod+l exec $lockscreen
+
+    # Calculator
+    bindsym XF86Calculator exec $term $calculator
 
     # Volume control
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
