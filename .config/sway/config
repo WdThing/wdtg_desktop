@@ -119,6 +119,10 @@ seat seat0 xcursor_theme Qogir 36
     # mouse button for dragging.
     floating_modifier $mod normal
 
+    # Toggle Freesync
+    bindcode $mod+35 exec swaymsg output DP-2 adaptive_sync on && notify-send "Adaptive sync enabled"
+    bindcode $mod+34 exec swaymsg output DP-2 adaptive_sync off && notify-send "Adaptive sync disabled"
+
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
@@ -267,5 +271,7 @@ exec $term /usr/bin/btop
 exec /usr/bin/corectrl
 
 exec_always $HOME/.config/sway/scripts/set_primary_monitor
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 include /etc/sway/config.d/*
