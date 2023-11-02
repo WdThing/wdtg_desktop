@@ -51,8 +51,10 @@ workspace 5 output HDMI-A-1
 ### Visual
 gaps inner 8
 default_border pixel 3
-
 client.focused #ffffff #2e9ef4 #ffffff
+
+### Focus
+focus_follows_mouse no
 
 ### Idle configuration
 #
@@ -110,6 +112,7 @@ seat seat0 xcursor_theme Qogir 36
 
     # Start your launcher
     # $MOD + D
+
     bindcode $mod+40 exec $menu
 
     # Lockscreen
@@ -294,7 +297,7 @@ exec $term /usr/bin/btop
 exec /usr/bin/corectrl
 
 exec_always $HOME/.config/sway/scripts/set_primary_monitor
-exec_always autotiling -w 1 2 3 4 5
+exec autotiling -w 1 2 3 4 5
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
