@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-  background: #1b182c;
+  background: #04132A;
   opacity: 0.9;
 }
 
@@ -31,7 +31,7 @@ window#waybar {
 }
 
 #workspaces {
-  background: #962a54;
+  background: #053867;
   color: white;
   font-weight: bold;
   border-radius: 0 1rem 1rem 0;
@@ -41,11 +41,11 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  background: #7a2043;
+  background: #05294D;
   border-radius: 1rem;
 }
 
 #taskbar {
-  background: #962a54;
+  background: #053867;
   border-radius: 1rem;
 }

@@ -50,7 +50,9 @@ workspace 5 output HDMI-A-1
 
 ### Visual
 gaps inner 8
-default_border pixel 2
+default_border pixel 3
+
+client.focused #ffffff #2e9ef4 #ffffff
 
 ### Idle configuration
 #
@@ -82,7 +84,7 @@ default_border pixel 2
 input type:keyboard {
   xkb_layout us(intl),custom(colemak_dh_dead)
   xkb_numlock enable
-  xkb_options grp:win_space_toggle
+  xkb_options grp:rctrl_toggle
 }
 
 input 1133:16500:Logitech_G305 {
@@ -96,17 +98,23 @@ seat seat0 xcursor_theme Qogir 36
 #
 # Basics:
 #
+    # Many of the keybinds are using bindcode because I use colemak (and the position of the keys change)
+
     # Start a terminal
-    bindsym $mod+Return exec $term
+    # $MOD + Return
+    bindcode $mod+36 exec $term
 
     # Kill focused window
-    bindsym $mod+q kill
+    # $MOD + Q
+    bindcode $mod+24 kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # $MOD + D
+    bindcode $mod+40 exec $menu
 
     # Lockscreen
-    bindsym $mod+l exec $lockscreen
+    # $MOD + L
+    bindcode $mod+46 exec $lockscreen
 
     # Calculator
     bindsym XF86Calculator exec $term $calculator
@@ -124,17 +132,21 @@ seat seat0 xcursor_theme Qogir 36
     floating_modifier $mod normal
 
     # Toggle Freesync
+    # $MOD + [ and $MOD + ]
     bindcode $mod+35 exec swaymsg output DP-2 adaptive_sync on && notify-send "Adaptive sync enabled"
     bindcode $mod+34 exec swaymsg output DP-2 adaptive_sync off && notify-send "Adaptive sync disabled"
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    #bindsym $mod+Shift+c reload
+    bindcode $mod+Shift+54 reload
 
     # Screenshots
-    bindsym $mod+Shift+s exec $screenshot --area
+    #bindsym $mod+Shift+s exec $screenshot --area
+    bindcode $mod+Shift+39 exec $screenshot --area
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindcode $mod+Shift+26 exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -192,16 +204,22 @@ seat seat0 xcursor_theme Qogir 36
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # $MOD + b
+    bindcode $mod+56 splith
+    # $MOD + v
+    bindcode $mod+55 splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    # $MOD + s
+    bindcode $mod+39 layout stacking
+    # $MOD + w
+    bindcode $mod+25 layout tabbed
+    # $MOD + e
+    bindcode $mod+26 layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    # $MOD + f
+    bindcode $mod+41 fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -210,7 +228,8 @@ seat seat0 xcursor_theme Qogir 36
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    # $MOD + a
+    bindcode $mod+38 focus parent
 #
 # Scratchpad:
 #
@@ -275,6 +294,7 @@ exec $term /usr/bin/btop
 exec /usr/bin/corectrl
 
 exec_always $HOME/.config/sway/scripts/set_primary_monitor
+exec_always autotiling -w 1 2 3 4 5
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
