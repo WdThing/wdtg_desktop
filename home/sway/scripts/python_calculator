@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-python_calculator() {
-	python -i -c "from numpy import *; import sys; print(f'Python Calculator - Python={sys.version}\nImported modules: numpy (*)')"
-}
-
-python_calculator
