@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 alias editor="nvim "
 alias zshconfig="editor ~/.zshrc"
 alias disablepage="sudo ~/Projects/Utilities/disable_page.sh"
+alias dropcache="sync && sudo sysctl -w vm.drop_caches=3"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export MOZ_ENABLE_WAYLAND=1 # for firefox to run on wayland
