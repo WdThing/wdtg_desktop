@@ -54,25 +54,25 @@
         "interval": 800
     },
 
-    "sway/workspaces": {
-        "all-outputs": true,
-	"disable-scroll": true,
-	"format": "{icon}",
-	"format-icons": {
-		"1": "",
-		"2": "",
-		"3": "",
-		"4": "",
-		"5": ""
-	},
-	"persistent_workspaces": {
-		"1": [],
-		"2": [],
-		"3": [],
-		"4": [],
-		"5": []
-	}
-    },
+  "sway/workspaces": {
+    "all-outputs": true,
+	  "disable-scroll": true,
+	  "format": "{icon}",
+	  "format-icons": {
+		  "1": "",
+		  "2": "",
+		  "3": "",
+		  "4": "",
+		  "5": ""
+	  },
+	  "persistent_workspaces": {
+		  "1": [],
+		  "2": [],
+		  "3": [],
+		  "4": [],
+		  "5": []
+	  }
+  },
 
     "custom/powermenu": {
 	"format": "",
