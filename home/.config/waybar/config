@@ -30,7 +30,7 @@
         "max-length": 10
     },
     "sway/language": {
-	"format": "{shortDescription}",
+	    "format": "{shortDescription}",
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -74,9 +74,9 @@
 	  }
   },
 
-    "custom/powermenu": {
-	"format": "",
-	"on-click": "$HOME/.config/sway/scripts/wlogout",
-	"tooltip": false
-    }
+  "custom/powermenu": {
+	  "format": "",
+	  "on-click": "$HOME/.config/sway/scripts/wlogout",
+	  "tooltip": false
+  }
 }

@@ -9,7 +9,6 @@ tracked_dirs["$HOME/.config/MangoHud"]="./home/.config"
 tracked_dirs["$HOME/.config/kitty"]="./home/.config"
 tracked_dirs["$HOME/.config/gtk-3.0"]="./home/.config"
 tracked_dirs["$HOME/.config/pipewire"]="./home/.config"
-tracked_dirs["$HOME/.config/xfce4"]="./home/.config"
 
 # Dirs to be copied to ./home
 tracked_dirs["$HOME/.zshrc"]="./home"
