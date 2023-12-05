@@ -300,6 +300,7 @@ exec /usr/bin/corectrl
 
 exec_always $HOME/.config/sway/scripts/set_primary_monitor
 exec autotiling -w 1 2 3 4 5
+exec wlsunset -s 21:00 -S 6:00 -t 3000
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
