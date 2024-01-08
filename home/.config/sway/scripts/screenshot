@@ -4,7 +4,7 @@
 
 time=$(date +%Y-%m-%d-%H-%M-%S)
 dir="$(xdg-user-dir PICTURES)/Screenshots"  # need 
-file="Screenshot_${time}_${RANDOM}.png"
+file="last_screenshot.png"
 
 # notify and view screenshot
 notify_cmd_shot="notify-send -h string:x-canonical-private-synchronous:shot-notify -u low"

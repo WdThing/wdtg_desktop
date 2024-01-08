@@ -9,8 +9,10 @@
         "max-length": 50
     },
     "clock": {
-        "format": "{:%a, %d. %b  %H:%M}",
-        "tooltip": false,
+        "format": "{:%a, %d. %b  %H:%M:%S}",
+        "tooltip": true,
+        "tooltip-format": "{:%Y-%m-%d - %H:%M:%S}",
+        "interval": 1
     },
     "wlr/taskbar": {
         "format": "{icon}",
