@@ -296,7 +296,7 @@ exec $notifications
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 workspace 5
 exec /usr/bin/corectrl
-exec sleep 3s && $term /usr/bin/btop
+exec $term /usr/bin/btop
 
 exec_always $HOME/.config/sway/scripts/set_primary_monitor
 exec autotiling -w 1 2 3 4 5

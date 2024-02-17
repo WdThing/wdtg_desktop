@@ -50,12 +50,6 @@
         "scroll-step": 1,
         "on-click": "pavucontrol"
     },
-    "custom/weather": {
-        "tooltip": false,
-        "exec": "curl 'https://wttr.in/Warsaw?format=1'",
-        "interval": 800
-    },
-
   "sway/workspaces": {
     "all-outputs": true,
 	  "disable-scroll": true,
@@ -75,7 +69,6 @@
 		  "5": []
 	  }
   },
-
   "custom/powermenu": {
 	  "format": "",
 	  "on-click": "$HOME/.config/sway/scripts/wlogout",
