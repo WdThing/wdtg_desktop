@@ -1354,6 +1354,7 @@
         <variant>
           <configItem>
             <name>colemak_dh_dead</name>
+            <shortDescription> CmDh </shortDescription>
             <description>English (Colemak-DH with dead keys)</description>
           </configItem>
         </variant>
