@@ -265,6 +265,7 @@ mode "numpad_mouse" {
     bindsym KP_1 exec ydotool mousemove -x -10 -y 10
     
     bindsym $mod+t mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+t mode "numpad_mouse"
 
