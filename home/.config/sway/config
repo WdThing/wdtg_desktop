@@ -40,13 +40,14 @@ output * bg ~/.config/sway/images/wallpaper.jpg fill
 
 # My hardware configuration
 output DP-2 pos 0 0 res 1920x1080@142.010Hz adaptive_sync off
-output HDMI-A-1 pos 1920 0 res 1600x900 transform 270
+output HDMI-A-1 pos 1920 0 res 1920x1080@142.010Hz adaptive_sync off
 
 workspace 1 output DP-2
 workspace 2 output DP-2
 workspace 3 output DP-2
 workspace 4 output HDMI-A-1
 workspace 5 output HDMI-A-1
+workspace 6 output HDMI-A-1
 
 workspace_layout tabbed
 
@@ -88,7 +89,9 @@ client.focused #ffffff #2e9ef4 #ffffff
 input type:keyboard {
   xkb_layout us(intl),custom(colemak_dh_dead)
   xkb_numlock enable
-  xkb_options grp:rctrl_toggle
+  xkb_options grp:rctrl_rshift_toggle
+  repeat_delay 500
+  repeat_rate 50
 }
 
 input 1133:16500:Logitech_G305 {
@@ -138,8 +141,8 @@ seat seat0 xcursor_theme Qogir 36
 
     # Toggle Freesync
     # $MOD + [ and $MOD + ]
-    bindcode $mod+35 exec swaymsg output DP-2 adaptive_sync on && notify-send "Adaptive sync enabled"
-    bindcode $mod+34 exec swaymsg output DP-2 adaptive_sync off && notify-send "Adaptive sync disabled"
+    bindcode $mod+35 exec swaymsg output DP-2 adaptive_sync on && swaymsg output HDMI-A-1 adaptive_sync on && notify-send "Adaptive sync enabled"
+    bindcode $mod+34 exec swaymsg output DP-2 adaptive_sync off && swaymsg output HDMI-A-1 adaptive_sync off && notify-send "Adaptive sync disabled"
 
     # Reload the configuration file
     #bindsym $mod+Shift+c reload
@@ -264,10 +267,9 @@ mode "numpad_mouse" {
     bindsym KP_3 exec ydotool mousemove -x 10 -y 10
     bindsym KP_1 exec ydotool mousemove -x -10 -y 10
     
-    bindsym $mod+t mode "default"
-    bindsym Escape mode "default"
+    bindcode $mod+28 mode "default"
 }
-bindsym $mod+t mode "numpad_mouse"
+bindcode $mod+28 mode "numpad_mouse"
 
 #
 # Resizing containers:
@@ -298,7 +300,7 @@ bindsym $mod+r mode "resize"
 #assign [app_id="firefox"] workspace 1
 assign [class="WebCord"] workspace 3
 assign [class="steam"] workspace 2
-assign [app_id="corectrl"] workspace 5
+assign [app_id="corectrl"] workspace 6
 assign [class="dota2"] workspace 2
 
 # Window rules
@@ -316,7 +318,7 @@ bar {
 #
 exec $notifications
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-workspace 5
+workspace 6
 exec /usr/bin/corectrl
 exec $term /usr/bin/btop
 

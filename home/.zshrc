@@ -104,9 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias editor="lvim "
-alias nvim="lvim "
-alias rnvim="nvim "
+alias editor="nvim "
 alias zshconfig="editor ~/.zshrc"
 alias disablepage="sudo ~/Projects/Utilities/disable_page.sh"
 alias dropcache="sync && sudo sysctl -w vm.drop_caches=3"
