@@ -104,14 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias editor="nvim "
-alias zshconfig="editor ~/.zshrc"
-alias disablepage="sudo ~/Projects/Utilities/disable_page.sh"
-alias dropcache="sync && sudo sysctl -w vm.drop_caches=3"
-alias cleancoredump="sudo rm -f /var/lib/systemd/coredump/*"
-alias cleanjournal="sudo journalctl --vacuum-size=5M"
-alias freespace="cleancoredump; cleanjournal; yay -Scc"
 
+# swayvm exports
 export MOZ_ENABLE_WAYLAND=1 # for firefox to run on wayland
 export MOZ_WEBRENDER=1
 export WLR_NO_HARDWARE_CURSORS=1
@@ -126,4 +120,4 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source $HOME/.config/userspace-venv/bin/activate
+source .zsh_ext
