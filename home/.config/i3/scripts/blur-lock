@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+PICTURE=~/.config/i3/images/wallpaper.png
+
+i3lock -t -i $PICTURE

@@ -105,19 +105,21 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 
-# swayvm exports
-export MOZ_ENABLE_WAYLAND=1 # for firefox to run on wayland
-export MOZ_WEBRENDER=1
-export WLR_NO_HARDWARE_CURSORS=1
-export XDG_CURRENT_DESKTOP=sway # xdg-desktop-portal
-export XDG_SESSION_DESKTOP=sway # systemd
-export XDG_SESSION_TYPE=wayland # xdg/systemd
-
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+if [ "$(tty)" = "/dev/tty1" ]; then
+  # swayvm exports
+  export MOZ_ENABLE_WAYLAND=1 # for firefox to run on wayland
+  export MOZ_WEBRENDER=1
+  export WLR_NO_HARDWARE_CURSORS=1
+  export XDG_CURRENT_DESKTOP=sway # xdg-desktop-portal
+  export XDG_SESSION_DESKTOP=sway # systemd
+  export XDG_SESSION_TYPE=wayland # xdg/systemd
   exec sway
+elif [ "$(tty)" = "/dev/tty2" ]; then
+  exec startx
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Include aliases and exports that shouldn't be shared
 source $HOME/.zsh_ext
