@@ -289,7 +289,9 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 ## App shortcuts
 #bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 #bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+#bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym Print exec --no-startup-id img_path="$HOME/Pictures/Screenshots/last_screenshot.png" && maim "$img_path" && xclip -selection clipboard -t image/png "$img_path" && notify-send "Screenshot saved to $img_path"
+bindsym $mod+shift+s exec --no-startup-id img_path="$HOME/Pictures/Screenshots/last_screenshot.png" && maim -s "$img_path" && xclip -selection clipboard -t image/png "$img_path" && notify-send "Screenshot saved to $img_path"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
@@ -326,6 +328,7 @@ workspace $ws6 output $monitor_right
 # bind program to workspace and focus to them on startup:
 assign [class="steam"] "2"
 assign [class="WebCord"] "3"
+assign [class="corectrl"] "6"
 
 # automatic set focus new window if it opens on another workspace than the current:
 focus_on_window_activation none
@@ -395,10 +398,10 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/images/wallpaper.png
 
 # set powersavings for display:
-exec --no-startup-id xset s 480 dpms 600 600 600
+# exec --no-startup-id xset s 480 dpms 600 600 600
 
 # disable power saving (for example if using xscreensaver)
-#exec --no-startup-id xset -dpms
+ exec --no-startup-id xset -dpms
 
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
@@ -422,7 +425,7 @@ exec --no-startup-id /usr/bin/dunst
 # autotiling script
 # https://github.com/nwg-piotr/autotiling
 # `yay -S autotiling ;) (it is in AUR)
-#exec_always --no-startup-id autotiling
+exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal
@@ -593,6 +596,5 @@ bindsym $mod+t exec --no-startup-id rofi -show window \
 #####################################
 
 exec --no-startup-id i3-msg 'workspace 5; exec flatpak run com.github.wwmm.easyeffects'
-exec --no-startup-id i3-msg 'workspace 6; exec /usr/bin/corectrl'
 exec --no-startup-id i3-msg 'workspace 6; exec kitty /usr/bin/btop'
 exec ~/.config/i3/scripts/autostart.sh
