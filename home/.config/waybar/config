@@ -51,8 +51,8 @@
         "on-click": "pavucontrol"
     },
   "sway/workspaces": {
-    "all-outputs": true,
-	  "disable-scroll": true,
+    "all-outputs": false,
+	  "disable-scroll": false,
 	  "format": "{icon}",
 	  "persistent_workspaces": {
 		  "1": [],

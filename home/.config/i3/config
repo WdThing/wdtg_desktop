@@ -76,7 +76,7 @@ bindcode $mod+11    workspace  $ws2
 bindcode $mod+12    workspace  $ws3
 bindcode $mod+13    workspace  $ws4
 bindcode $mod+14    workspace  $ws5
-bindcode $mod+15    workspace  $ws6; layout default
+bindcode $mod+15    workspace  $ws6
 bindcode $mod+16    workspace  $ws7
 bindcode $mod+17    workspace  $ws8
 bindcode $mod+18    workspace  $ws9
@@ -142,6 +142,29 @@ bindcode $mod+Shift+80 	 move container to workspace  $ws8
 bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
+
+# Include mouse mode
+
+mode "mouse" {
+    bindcode 83 exec xdotool mousemove_relative -- -10 0
+    bindcode 85 exec xdotool mousemove_relative -- 10 0
+    bindcode 80 exec xdotool mousemove_relative -- 0 -10
+    bindcode 88 exec xdotool mousemove_relative -- 0 10
+
+    bindcode 79 exec xdotool mousemove_relative -- -10 -10
+    bindcode 81 exec xdotool mousemove_relative -- 10 -10
+    bindcode 87 exec xdotool mousemove_relative -- -10 10
+    bindcode 89 exec xdotool mousemove_relative -- 10 10
+
+    # clicks
+    bindcode 84 exec xdotool click 1
+    bindcode 90 exec xdotool click 3
+
+    bindcode $mod+106 mode "default"
+}
+
+bindcode $mod+77 mode "mouse"
+
 # resize window (you can also use the mouse for that):
 #mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
@@ -193,7 +216,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
+# bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
 # bindsym $mod+F1 exec --no-startup-id xed ~/.config/i3/keybindings
@@ -317,7 +340,7 @@ set $ws10 "10"
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
 set $monitor_left "DisplayPort-1"
-set $monitor_right "HDMI-A-0"
+set $monitor_right "DisplayPort-2"
 workspace $ws1 output $monitor_left
 workspace $ws2 output $monitor_left
 workspace $ws3 output $monitor_left
@@ -326,9 +349,15 @@ workspace $ws5 output $monitor_right
 workspace $ws6 output $monitor_right
 
 # bind program to workspace and focus to them on startup:
-assign [class="steam"] "2"
+assign [title="Steam"] "2"
+assign [class="steam*"] "2"
 assign [class="WebCord"] "3"
 assign [class="corectrl"] "6"
+assign [class="rust"] "4"
+
+# Assign games
+assign [instance="Godot*"] "2"
+assign [instance="steam_app*"] "2"
 
 # automatic set focus new window if it opens on another workspace than the current:
 focus_on_window_activation none
@@ -375,7 +404,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # if enabled you should comment welcome app.
 # https://github.com/jceb/dex
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
-exec --no-startup-id dex --autostart --environment i3
+#exec --no-startup-id dex --autostart --environment i3
 
 # start welcome app
 #exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
@@ -384,7 +413,7 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id numlockx on
 
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
+exec --no-startup-id setxkbmap -layout 'us,custom' -variant intl,colemak_dh_dead -option 'grp:ctrls_toggle'
 
 # start conky:
 #exec_always --no-startup-id conky
@@ -398,10 +427,10 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/images/wallpaper.png
 
 # set powersavings for display:
-# exec --no-startup-id xset s 480 dpms 600 600 600
+exec --no-startup-id xset s 4800 dpms 3600 3600 3600
 
 # disable power saving (for example if using xscreensaver)
- exec --no-startup-id xset -dpms
+# exec --no-startup-id xset -dpms
 
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
@@ -595,6 +624,7 @@ bindsym $mod+t exec --no-startup-id rofi -show window \
 # Autostart and assign workspaces   #
 #####################################
 
-exec --no-startup-id i3-msg 'workspace 5; exec flatpak run com.github.wwmm.easyeffects'
+exec --no-startup-id i3-msg 'workspace 6; exec flatpak run com.github.wwmm.easyeffects'
 exec --no-startup-id i3-msg 'workspace 6; exec kitty /usr/bin/btop'
-exec ~/.config/i3/scripts/autostart.sh
+exec --no-startup-id i3-msg 'workspace 6; exec corectrl; exec corectrl; exec corectrl; exec corectrl; exec corectrl'
+exec_always ~/.config/i3/scripts/autostart.sh

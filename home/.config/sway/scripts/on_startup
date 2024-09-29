@@ -1,5 +1,1 @@
 #!/bin/bash
-
-kitty --hold -e ~/Projects/rscheduler/dist/linux_x64/rscheduler-producer &
-
-kitty --hold -e ~/Projects/rscheduler/dist/linux_x64/rscheduler-consumer &

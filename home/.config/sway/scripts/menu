@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-CONFIG=$HOME/.config/sway/wofi/config
-STYLE=$HOME/.config/sway/wofi/style.css
-COLOR=$HOME/.config/sway/wofi/colors
+CONFIG=$HOME/.config/sway/fuzzel/fuzzel.ini
 
-
-if [[ ! $(pidof wofi) ]]; then
-	$menu wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE} --color ${COLOR}
+if [[ ! $(pidof fuzzel) ]]; then
+  fuzzel --config="$CONFIG"
 else
-	pkill wofi
+  pkill fuzzel
 fi

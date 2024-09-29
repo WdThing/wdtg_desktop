@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 
-if [ "$(tty)" = "/dev/tty1" ]; then
+if [ "$(tty)" = "/dev/tty2" ]; then
   # swayvm exports
   export MOZ_ENABLE_WAYLAND=1 # for firefox to run on wayland
   export MOZ_WEBRENDER=1
@@ -114,7 +114,7 @@ if [ "$(tty)" = "/dev/tty1" ]; then
   export XDG_SESSION_DESKTOP=sway # systemd
   export XDG_SESSION_TYPE=wayland # xdg/systemd
   exec sway
-elif [ "$(tty)" = "/dev/tty2" ]; then
+elif [ "$(tty)" = "/dev/tty1" ]; then
   exec startx
 fi
 
