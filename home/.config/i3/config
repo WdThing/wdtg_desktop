@@ -339,7 +339,7 @@ set $ws10 "10"
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-set $monitor_left "DisplayPort-1"
+set $monitor_left "DisplayPort-0"
 set $monitor_right "DisplayPort-2"
 workspace $ws1 output $monitor_left
 workspace $ws2 output $monitor_left
@@ -351,13 +351,11 @@ workspace $ws6 output $monitor_right
 # bind program to workspace and focus to them on startup:
 assign [title="Steam"] "2"
 assign [class="steam*"] "2"
-assign [class="WebCord"] "3"
-assign [class="corectrl"] "6"
-assign [class="rust"] "4"
 
 # Assign games
 assign [instance="Godot*"] "2"
 assign [instance="steam_app*"] "2"
+assign [class="WebCord"] "3"
 
 # automatic set focus new window if it opens on another workspace than the current:
 focus_on_window_activation none
@@ -386,10 +384,10 @@ focus_on_window_activation none
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-# exec_always --no-startup-id picom -b
+# exec_always --no-startup-id picom --transparent-clipping -b
 #
 # for custom config:
-#exec_always --no-startup-id picom --config  ~/.config/picom.conf
+# exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 #############################################
 # autostart applications/services on login: #
@@ -420,7 +418,7 @@ exec --no-startup-id setxkbmap -layout 'us,custom' -variant intl,colemak_dh_dead
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/.screenlayout/monitor.sh
+# exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
@@ -624,7 +622,16 @@ bindsym $mod+t exec --no-startup-id rofi -show window \
 # Autostart and assign workspaces   #
 #####################################
 
-exec --no-startup-id i3-msg 'workspace 6; exec flatpak run com.github.wwmm.easyeffects'
-exec --no-startup-id i3-msg 'workspace 6; exec kitty /usr/bin/btop'
-exec --no-startup-id i3-msg 'workspace 6; exec corectrl; exec corectrl; exec corectrl; exec corectrl; exec corectrl'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+
+exec --no-startup-id flatpak run com.valvesoftware.Steam
+exec --no-startup-id flatpak run io.github.spacingbat3.webcord
+
+exec --no-startup-id i3-msg 'workspace 6; append_layout ~/.config/i3/scripts/wk6.json'
+
+exec --no-startup-id i3-msg 'sleep 1'
+exec --no-startup-id i3-msg 'exec flatpak run com.github.wwmm.easyeffects'
+exec --no-startup-id i3-msg 'exec kitty /usr/bin/btop'
+exec --no-startup-id i3-msg 'exec corectrl'
 exec_always ~/.config/i3/scripts/autostart.sh
+exec --no-startup-id i3-msg 'exec redshift'
