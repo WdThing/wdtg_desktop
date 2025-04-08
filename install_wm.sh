@@ -12,26 +12,26 @@ fi
 project_dir=$(dirname "$0")
 
 # Install base packages
-sudo ${project_dir}/scripts/core_packages.sh
+${project_dir}/scripts/core_packages.sh
 
 # Install WM specific packages
 if [[ $1 == "i3" ]]; then
-    sudo ${project_dir}/scripts/i3_packages.sh
+    ${project_dir}/scripts/i3_packages.sh
 elif [[ $1 == "sway" ]]; then
-    sudo ${project_dir}/scripts/sway_packages.sh
+    ${project_dir}/scripts/sway_packages.sh
 fi
 
 # Move home
-sudo ${project_dir}/scripts/copy_to_home.sh ${project_dir}
+${project_dir}/scripts/copy_to_home.sh ${project_dir}
 
 # Disable page
-sudo ${project_dir}/scripts/disable_page.sh
+${project_dir}/scripts/disable_page.sh
 
 # Include colemak layout
-sudo ${project_dir}/extra/keyboard/install_colemak.sh
+${project_dir}/extra/keyboard/install_colemak.sh
 
 # Enable zram
-sudo ${project_dir}/extra/zram/install_zram.sh
+${project_dir}/extra/zram/install_zram.sh
 
 echo "__________________________________________________"
 echo "Finished installation, please reboot"
