@@ -322,11 +322,11 @@ bar {
 exec $notifications
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 workspace 2
-exec flatpak run com.valvesoftware.Steam
+exec steam
 workspace 3
 exec flatpak run io.github.spacingbat3.webcord
 workspace 5
-exec flatpak run com.github.wwmm.easyeffects
+exec easyeffects
 exec corectrl
 workspace 6
 exec $term btop
