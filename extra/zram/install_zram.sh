@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-
+echo "__________________________________________________"
+echo "Installing and enabling zram"
+echo "__________________________________________________"
 # 0) Pre-requisite: ZSWAP must be disabled
 zswap_enabled_path="/sys/module/zswap/parameters/enabled"
 expected_content="N"
@@ -10,6 +12,7 @@ if [ -f "$zswap_enabled_path" ]; then
     echo "ZSWAP is disabled, continuing ZRAM installation"
   else
     echo "ZSWAP is enabled, disable it to continue ZRAM installation"
+    exit 10
   fi
 fi
 
@@ -26,5 +29,3 @@ sudo cp "$source_dir/$file" "$target_dir"
 
 # 3) Start zram
 sudo systemctl start /dev/zram0
-
-echo "Installation script finished, please reboot"

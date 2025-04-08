@@ -32,3 +32,9 @@ ${project_dir}/extra/keyboard/install_colemak.sh
 
 # Enable zram
 ${project_dir}/extra/zram/install_zram.sh
+
+echo "__________________________________________________"
+echo "Finished installation, please reboot"
+echo "__________________________________________________"
+
+notify-send "Finished installation, please reboot"
