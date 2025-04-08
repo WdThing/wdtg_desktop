@@ -11,8 +11,8 @@ if [ -f "$zswap_enabled_path" ]; then
   if [ "$file_content" = "$expected_content" ]; then
     echo "ZSWAP is disabled, continuing ZRAM installation"
   else
-    echo "ZSWAP is enabled, disable it to continue ZRAM installation"
-    exit 10
+    echo "ZSWAP is enabled, disabling it"
+    echo 0 > /sys/module/zswap/parameters/enabled
   fi
 fi
 
