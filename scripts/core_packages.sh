@@ -90,7 +90,7 @@ python-pip
 echo "__________________________________________________"
 echo "Installing base packages (yay)"
 echo "__________________________________________________"
-yay -Syu --needed --answerclean=None --answerdiff=None ${base_packages} ${gaming_packages} ${font_packages} ${programming_packages}
+yay -Syuc --needed --answerclean=None --answerdiff=None ${base_packages} ${gaming_packages} ${font_packages} ${programming_packages}
 
 # Flatpak packages
 echo "__________________________________________________"
