@@ -107,3 +107,24 @@ echo "__________________________________________________"
 echo "Changing default shell to ZSH"
 echo "__________________________________________________"
 chsh -s /usr/bin/zsh
+
+# Includig polkit rules
+echo "__________________________________________________"
+echo "Including polkit rules"
+echo "__________________________________________________"
+POLKIT_DIR="/etc/polkit-1/rules.d"
+
+FILE_PATH="$POLKIT_DIR/90-corectrl.rules"
+USER_GROUP=$(id -gn "$USER")
+
+sudo tee "$FILE_PATH" > /dev/null <<EOF
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.corectrl.helper.init" ||
+         action.id == "org.corectrl.helperkiller.init") &&
+        subject.local == true &&
+        subject.active == true &&
+        subject.isInGroup("$USER_GROUP")) {
+            return polkit.Result.YES;
+    }
+});
+EOF
