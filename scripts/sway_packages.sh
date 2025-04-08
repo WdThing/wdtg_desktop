@@ -4,10 +4,10 @@ echo "__________________________________________________"
 echo "Installing sway packages (yay)"
 echo "__________________________________________________"
 sway_packages="autotiling-git
-azore
+azote
 egl-wayland
 fuzzel
-gkt-layer-shell
+gtk-layer-shell
 grim
 gtk-engine-murrine
 gtklock
