@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
-project_dir=$(dirname "$0")
-
-# Install base packages
-${project_dir}/scripts/base_packages.sh
-
-# Install i3-specific packages
+echo "__________________________________________________"
+echo "Installing i3 packages (yay)"
+echo "__________________________________________________"
 i3_packages="acpi
 arandr
 arc-gtk-theme
@@ -44,6 +41,3 @@ xkblayout-state-git
 xorg-xbacklight
 xorg-xdpyinfo"
 yay -Syu --needed ${i3_packages}
-
-# Move home
-${project_dir}/scripts/copy_to_home.sh ${project_dir}
