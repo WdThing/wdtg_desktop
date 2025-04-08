@@ -39,6 +39,7 @@ tumbler
 unzip
 xarchiver
 zip
+zram-generator
 zsh
 "
 gaming_packages="alsa-plugins

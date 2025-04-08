@@ -3,6 +3,7 @@
 echo "__________________________________________________"
 echo "Installing and enabling zram"
 echo "__________________________________________________"
+
 # 0) Pre-requisite: ZSWAP must be disabled
 zswap_enabled_path="/sys/module/zswap/parameters/enabled"
 expected_content="N"
@@ -16,16 +17,13 @@ if [ -f "$zswap_enabled_path" ]; then
   fi
 fi
 
-# 1) Install zram-generator
-yes | yay -S zram-generator
-
-# 2) Move configuration file to systemd directory
+# 1) Move configuration file to systemd directory
 source_dir="$(dirname "$0")"
 target_dir="/etc/systemd"
 
 file="zram-generator.conf"
 
-sudo cp "$source_dir/$file" "$target_dir"
+cp "$source_dir/$file" "$target_dir"
 
-# 3) Start zram
-sudo systemctl start /dev/zram0
+# 2) Start zram
+systemctl start /dev/zram0
