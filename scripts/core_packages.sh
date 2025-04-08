@@ -26,6 +26,7 @@ jq
 kitty
 lm_sensors
 lsp-plugins-lv2
+ly
 mda.lv2
 mpv
 neovim
@@ -96,6 +97,12 @@ echo "__________________________________________________"
 echo "Installing flatpak applications"
 echo "__________________________________________________"
 flatpak install flathub io.github.spacingbat3.webcord
+
+# Flatpak packages
+echo "__________________________________________________"
+echo "Enabling ly (dm)"
+echo "__________________________________________________"
+systemctl enable ly.service
 
 # Lazyvim
 echo "__________________________________________________"
