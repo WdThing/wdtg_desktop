@@ -65,6 +65,7 @@ winetricks
 "
 font_packages="noto-fonts-emoji
 otf-font-awesome
+ttf-font-awesome
 ttf-liberation
 ttf-meslo-nerd-font-powerlevel10k
 "
