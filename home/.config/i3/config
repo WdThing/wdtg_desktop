@@ -313,8 +313,8 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 #bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 #bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 #bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
-bindsym Print exec --no-startup-id img_path="$HOME/Pictures/Screenshots/last_screenshot.png" && maim "$img_path" && xclip -selection clipboard -t image/png "$img_path" && notify-send "Screenshot saved to $img_path"
-bindsym $mod+shift+s exec --no-startup-id img_path="$HOME/Pictures/Screenshots/last_screenshot.png" && maim -s "$img_path" && xclip -selection clipboard -t image/png "$img_path" && notify-send "Screenshot saved to $img_path"
+bindsym Print exec --no-startup-id src_path="$HOME/Pictures/Screenshots" && img_path="$src_path/last_screenshot.png" && mkdir -p "$src_path" && maim "$img_path" && xclip -selection clipboard -t image/png "$img_path" && notify-send "Screenshot saved to $img_path"
+bindsym $mod+shift+s exec --no-startup-id src_path="$HOME/Pictures/Screenshots" && img_path="$src_path/last_screenshot.png" && mkdir -p "$src_path" && maim -s "$img_path" && xclip -selection clipboard -t image/png "$img_path" && notify-send "Screenshot saved to $img_path"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
@@ -624,7 +624,7 @@ bindsym $mod+t exec --no-startup-id rofi -show window \
 
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 
-exec --no-startup-id flatpak run com.valvesoftware.Steam
+exec --no-startup-id i3-msg 'workspace 2; exec steam'
 exec --no-startup-id flatpak run io.github.spacingbat3.webcord
 
 exec --no-startup-id i3-msg 'workspace 6; append_layout ~/.config/i3/scripts/wk6.json'
