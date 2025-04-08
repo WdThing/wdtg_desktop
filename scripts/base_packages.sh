@@ -68,11 +68,15 @@ otf-font-awesome
 ttf-liberation
 ttf-meslo-nerd-font-powerlevel10k
 "
+programming_packages="code
+python
+python-pip
+"
 
 echo "__________________________________________________"
 echo "Installing base packages (yay)"
 echo "__________________________________________________"
-yay -Syu --needed ${base_packages} ${gaming_packages} ${font_packages}
+yay -Syu --needed ${base_packages} ${gaming_packages} ${font_packages} ${programming_packages}
 
 # Flatpak packages
 echo "__________________________________________________"
