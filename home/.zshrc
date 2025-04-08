@@ -122,4 +122,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Include aliases and exports that shouldn't be shared
-source $HOME/.zsh_ext
+if [ -e $HOME/.zsh_ext ]
+then
+  source $HOME/.zsh_ext
+fi
