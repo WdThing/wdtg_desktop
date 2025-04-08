@@ -630,7 +630,7 @@ exec --no-startup-id flatpak run io.github.spacingbat3.webcord
 exec --no-startup-id i3-msg 'workspace 6; append_layout ~/.config/i3/scripts/wk6.json'
 
 exec --no-startup-id i3-msg 'sleep 1'
-exec --no-startup-id i3-msg 'exec flatpak run com.github.wwmm.easyeffects'
+exec --no-startup-id i3-msg 'exec easyeffects'
 exec --no-startup-id i3-msg 'exec kitty /usr/bin/btop'
 exec --no-startup-id i3-msg 'exec corectrl'
 exec_always ~/.config/i3/scripts/autostart.sh
