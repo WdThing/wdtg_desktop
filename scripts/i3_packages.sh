@@ -31,4 +31,4 @@ xfce4-terminal
 xkblayout-state-git
 xorg-xbacklight
 xorg-xdpyinfo"
-yay -Syuc --needed --answerclean=None --answerdiff=None ${i3_packages}
+yay -Syu --needed --answerclean=None --answerdiff=None ${i3_packages}

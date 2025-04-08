@@ -33,4 +33,4 @@ xdg-desktop-portal-wlr
 xed
 xorg-xwayland
 ydotool"
-yay -Syuc --needed --answerclean=None --answerdiff=None ${sway_packages}
+yay -Syu --needed --answerclean=None --answerdiff=None ${sway_packages}
