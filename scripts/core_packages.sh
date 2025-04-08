@@ -4,7 +4,9 @@
 command -v yay >/dev/null 2>&1 || sudo pacman -S yay
 
 # General packages (x11 or wayland)
-base_packages="baobab
+base_packages="acpi
+arc-gtk-theme
+baobab
 btop
 corectrl
 easyeffects
@@ -13,7 +15,14 @@ flatpak
 fluidsynth
 gnome-disk-utility
 gparted
+gvfs
+gvfs-afc
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
 imv
+jq
 kitty
 lm_sensors
 lsp-plugins-lv2
@@ -63,10 +72,13 @@ vulkan-tools
 wine
 winetricks
 "
-font_packages="noto-fonts-emoji
-otf-font-awesome
+font_packages="awesome-terminal-fonts
+noto-fonts-emoji
+ttf-jetbrains-mono
 ttf-liberation
 ttf-meslo-nerd-font-powerlevel10k
+ttf-nerd-fonts-symbols
+ttf-ubuntu-font-family
 "
 programming_packages="code
 python

@@ -3,25 +3,16 @@
 echo "__________________________________________________"
 echo "Installing i3 packages (yay)"
 echo "__________________________________________________"
-i3_packages="acpi
-arandr
-arc-gtk-theme
+i3_packages="arandr
 archlinux-xdg-menu
 dex
 dunst
 feh
 galculator
-gvfs
-gvfs-afc
-gvfs-gphoto2
-gvfs-mtp
-gvfs-nfs
-gvfs-smb
 i3-wm
 i3blocks
 i3lock-color
 i3status
-jq
 lightdm
 lightdm-slick-greeter
 maim
