@@ -23,6 +23,7 @@ tracked_dirs["$HOME/.local/share/nwg-look"]="./home/.local/share"
 tracked_dirs["$HOME/.local/share/rofi"]="./home/.local/share"
 
 # Dirs to be copied to ./home
+tracked_dirs["$HOME/.xinitrc"]="./home"
 tracked_dirs["$HOME/.zshrc"]="./home"
 tracked_dirs["$HOME/.bashrc"]="./home"
 tracked_dirs["$HOME/.p10k.zsh"]="./home"
