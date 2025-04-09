@@ -31,6 +31,7 @@ mda.lv2
 mpv
 neovim
 network-manager-applet
+ntfs-3g
 nwg-look
 polkit-gnome
 thunar
