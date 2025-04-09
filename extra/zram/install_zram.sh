@@ -27,4 +27,4 @@ cp "$source_dir/$file" "$target_dir"
 
 # 2) Start zram
 systemctl daemon-reload
-systemctl start /dev/zram0
+systemctl enable /dev/zram0
