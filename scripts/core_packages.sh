@@ -34,6 +34,7 @@ network-manager-applet
 ntfs-3g
 nwg-look
 polkit-gnome
+realtime-privileges
 thunar
 thunar-archive-plugin
 thunar-volman
@@ -92,6 +93,11 @@ echo "__________________________________________________"
 echo "Installing base packages (yay)"
 echo "__________________________________________________"
 yay -Syu --needed --answerclean=None --answerdiff=None ${base_packages} ${gaming_packages} ${font_packages} ${programming_packages}
+
+echo "__________________________________________________"
+echo "Including user in realtime group"
+echo "__________________________________________________"
+sudo usermod -a -G realtime $USER
 
 # Flatpak packages
 echo "__________________________________________________"
