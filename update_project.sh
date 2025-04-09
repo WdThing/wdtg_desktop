@@ -18,6 +18,7 @@ tracked_dirs["$HOME/.config/rofi"]="./home/.config"
 tracked_dirs["$HOME/.config/xsettingsd"]="./home/.config"
 tracked_dirs["$HOME/.config/picom"]="./home/.config"
 tracked_dirs["$HOME/.config/wireplumber"]="./home/.config"
+tracked_dirs["$HOME/.config/redshift.conf"]="./home/.config"
 
 # Dirs to be copied to .local/share
 tracked_dirs["$HOME/.local/share/nwg-look"]="./home/.local/share"

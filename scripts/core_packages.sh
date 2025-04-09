@@ -35,6 +35,7 @@ ntfs-3g
 nwg-look
 polkit-gnome
 realtime-privileges
+redshift
 thunar
 thunar-archive-plugin
 thunar-volman
