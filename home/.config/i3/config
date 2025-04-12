@@ -353,6 +353,7 @@ assign [title="Steam"] "2"
 assign [class="steam*"] "2"
 
 # Assign games
+assign [instance="Godot*"] "2"
 assign [instance="steam_app*"] "2"
 assign [class="WebCord"] "3"
 
