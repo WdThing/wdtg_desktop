@@ -19,6 +19,8 @@ if [[ $1 == "i3" ]]; then
     ${project_dir}/scripts/i3_packages.sh
 elif [[ $1 == "sway" ]]; then
     ${project_dir}/scripts/sway_packages.sh
+elif [[ $1 == "hyprland"  ]]; then
+    ${project_dir}/scripts/hyprland_packages.sh
 fi
 
 # Move home

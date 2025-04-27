@@ -114,6 +114,7 @@ if ! systemctl is-active --quiet ly.service; then
     export XDG_CURRENT_DESKTOP=sway # xdg-desktop-portal
     export XDG_SESSION_DESKTOP=sway # systemd
     export XDG_SESSION_TYPE=wayland # xdg/systemd
+    export QT_QPA_PLATFORM=wayland
     exec sway
   elif [ "$(tty)" = "/dev/tty1" ]; then
     exec startx
