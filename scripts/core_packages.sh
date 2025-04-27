@@ -145,7 +145,7 @@ POLKIT_DIR="/etc/polkit-1/rules.d"
 FILE_PATH="$POLKIT_DIR/90-corectrl.rules"
 USER_GROUP=$(id -gn "$USER")
 
-sudo tee "$FILE_PATH" > /dev/null <<EOF
+sudo tee "$FILE_PATH" >/dev/null <<EOF
 polkit.addRule(function(action, subject) {
     if ((action.id == "org.corectrl.helper.init" ||
          action.id == "org.corectrl.helperkiller.init") &&
@@ -156,3 +156,4 @@ polkit.addRule(function(action, subject) {
     }
 });
 EOF
+
