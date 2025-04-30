@@ -76,6 +76,7 @@ steam-native-runtime
 vulkan-tools
 wine
 winetricks
+webcord-bin
 "
 font_packages="awesome-terminal-fonts
 noto-fonts-emoji
@@ -99,12 +100,6 @@ echo "__________________________________________________"
 echo "Including user in realtime group"
 echo "__________________________________________________"
 sudo usermod -a -G realtime $USER
-
-# Flatpak packages
-echo "__________________________________________________"
-echo "Installing flatpak applications"
-echo "__________________________________________________"
-flatpak install flathub io.github.spacingbat3.webcord
 
 # Flatpak packages
 echo "__________________________________________________"
@@ -156,4 +151,3 @@ polkit.addRule(function(action, subject) {
     }
 });
 EOF
-
