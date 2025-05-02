@@ -4,8 +4,10 @@ if [[ $1 == "i3" ]]; then
     echo "Installing i3wm"
 elif [[ $1 == "sway" ]]; then
     echo "Installing sway"
+elif [[ $1 == "hyprland" ]]; then
+    echo "Installing hyprland"
 else
-    echo "First parameter must be the wm selected: i3, sway"
+    echo "First parameter must be the wm selected: i3, sway, hyprland"
     exit 10
 fi
 
