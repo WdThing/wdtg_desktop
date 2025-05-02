@@ -83,10 +83,3 @@ _open_files_for_editing() {
 # alias ef='_open_files_for_editing'     # 'ef' opens given file(s) for editing
 # alias pacdiff=eos-pacdiff
 ################################################################################
-
-export MOZ_ENABLE_WAYLAND=1 # for firefox to run on wayland
-export MOZ_WEBRENDER=1
-export WLR_NO_HARDWARE_CURSORS=1
-export XDG_CURRENT_DESKTOP=sway # xdg-desktop-portal
-export XDG_SESSION_DESKTOP=sway # systemd
-export XDG_SESSION_TYPE=wayland # xdg/systemd

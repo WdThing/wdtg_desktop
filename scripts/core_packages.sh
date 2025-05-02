@@ -10,7 +10,9 @@ baobab
 btop
 corectrl
 easyeffects
+eza
 fastfetch
+fish
 flatpak
 fluidsynth
 gnome-disk-utility
@@ -44,7 +46,6 @@ unzip
 xarchiver
 zip
 zram-generator
-zsh
 "
 gaming_packages="alsa-plugins
 gamemode
@@ -117,19 +118,15 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 echo "__________________________________________________"
-echo "Installing oh-my-zsh"
+echo "Installing fisher"
 echo "__________________________________________________"
-rm -rf $HOME/.oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
 # Change default shell
 echo "__________________________________________________"
-echo "Changing default shell to ZSH"
+echo "Changing default shell to fish"
 echo "__________________________________________________"
-chsh -s /usr/bin/zsh
+chsh -s /usr/bin/fish
 
 # Includig polkit rules
 echo "__________________________________________________"

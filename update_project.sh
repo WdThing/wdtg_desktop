@@ -21,6 +21,7 @@ tracked_dirs["$HOME/.config/wireplumber"]="./home/.config"
 tracked_dirs["$HOME/.config/redshift.conf"]="./home/.config"
 tracked_dirs["$HOME/.config/hypr"]="./home/.config"
 tracked_dirs["$HOME/.config/easyeffects"]="./home/.config"
+tracked_dirs["$HOME/.config/fish"]="./home/.config"
 
 # Dirs to be copied to .local/share
 tracked_dirs["$HOME/.local/share/nwg-look"]="./home/.local/share"
@@ -28,9 +29,7 @@ tracked_dirs["$HOME/.local/share/rofi"]="./home/.local/share"
 
 # Dirs to be copied to ./home
 tracked_dirs["$HOME/.xinitrc"]="./home"
-tracked_dirs["$HOME/.zshrc"]="./home"
 tracked_dirs["$HOME/.bashrc"]="./home"
-tracked_dirs["$HOME/.p10k.zsh"]="./home"
 tracked_dirs["$HOME/.XCompose"]="./home"
 tracked_dirs["$HOME/.Xresources"]="./home"
 tracked_dirs["$HOME/.profile"]="./home"
