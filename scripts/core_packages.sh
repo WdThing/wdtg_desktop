@@ -120,7 +120,9 @@ rm -rf ~/.config/nvim/.git
 echo "__________________________________________________"
 echo "Installing fisher"
 echo "__________________________________________________"
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+curl -o /tmp/fisher.fish https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
+source /tmp/fisher.fish
+fisher install jorgebucaran/fisher
 
 # Change default shell
 echo "__________________________________________________"
