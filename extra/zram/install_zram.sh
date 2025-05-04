@@ -13,7 +13,7 @@ if [ -f "$zswap_enabled_path" ]; then
     echo "ZSWAP is disabled, continuing ZRAM installation"
   else
     echo "ZSWAP is enabled, disabling it"
-    echo 0 > /sys/module/zswap/parameters/enabled
+    echo 0 >/sys/module/zswap/parameters/enabled
   fi
 fi
 
@@ -28,3 +28,5 @@ cp "$source_dir/$file" "$target_dir"
 # 2) Start zram
 systemctl daemon-reload
 systemctl start /dev/zram0
+
+echo "ZRAM enabled"
