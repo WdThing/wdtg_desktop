@@ -67,11 +67,13 @@ lib32-opencl-icd-loader
 libjpeg-turbo
 libva
 libxslt
+lutris
 mangohud
 mpg123
 obs-studio
 openal
 opencl-icd-loader
+protonup-qt
 steam
 steam-native-runtime
 vulkan-tools

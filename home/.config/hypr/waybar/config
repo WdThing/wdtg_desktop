@@ -32,7 +32,7 @@
         "max-length": 10
     },
     "hyprland/language": {
-	    "format": "{shortDescription}"
+	    "format": "  {shortDescription}",
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
