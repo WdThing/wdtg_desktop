@@ -32,6 +32,7 @@ shotwin() {
 }
 
 shotarea() {
+  pkill slurp
   cd ${dir} && grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | tee "$file" | wl-copy
   #notify_view
 }
@@ -40,6 +41,7 @@ if [[ ! -d "$dir" ]]; then
   mkdir -p "$dir"
 fi
 
+pkill grim
 if [[ "$1" == "--now" ]]; then
   shotnow
 elif [[ "$1" == "--area" ]]; then

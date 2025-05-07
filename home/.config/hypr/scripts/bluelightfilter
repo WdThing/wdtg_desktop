@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Check if script is already in crontab
+if ! crontab -l 2>/dev/null | grep -q "$SCRIPT_PATH"; then
+  # Get full path of the script
+  SCRIPT_PATH="$(readlink -f "$0")"
+  (
+    crontab -l 2>/dev/null
+    echo "*/5 * * * * $SCRIPT_PATH"
+  ) | crontab -
+fi
+
+# Get current hour (24-hour format)
+hour=$(date +%H)
+
+# Check if hour is between 21 (9PM) and 07 (7AM)
+if [ "$hour" -ge 21 ] || [ "$hour" -lt 7 ]; then
+  if ! pgrep -x "wlsunset" >/dev/null; then
+    hyprctl dispatch exec "hyprsunset --temperature 3500"
+  fi
+else
+  if pgrep -x "wlsunset" >/dev/null; then
+    pkill hyprsunset
+  fi
+fi
