@@ -355,7 +355,7 @@ assign [class="steam*"] "2"
 # Assign games
 assign [instance="Godot*"] "2"
 assign [instance="steam_app*"] "2"
-assign [class="WebCord"] "3"
+assign [class="discord"] "3"
 
 # automatic set focus new window if it opens on another workspace than the current:
 focus_on_window_activation none
@@ -625,7 +625,7 @@ bindsym $mod+t exec --no-startup-id rofi -show window \
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
-exec --no-startup-id i3-msg 'workspace 3; exec webcord'
+exec --no-startup-id i3-msg 'workspace 3; exec discord'
 
 exec --no-startup-id i3-msg 'workspace 6; append_layout ~/.config/i3/scripts/wk6.json'
 

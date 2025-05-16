@@ -48,6 +48,7 @@ zip
 zram-generator
 "
 gaming_packages="alsa-plugins
+discord
 gamemode
 gamescope
 giflib
@@ -79,7 +80,6 @@ steam-native-runtime
 vulkan-tools
 wine
 winetricks
-webcord-bin
 "
 font_packages="awesome-terminal-fonts
 noto-fonts-emoji
