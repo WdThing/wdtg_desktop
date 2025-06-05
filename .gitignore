@@ -2,3 +2,4 @@
 test/*
 /**/.config/autostart
 /**/*_ext.*
+/**/*tmp*
